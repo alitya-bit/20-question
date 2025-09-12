@@ -1,0 +1,37 @@
+// This code is developed by Alitya Saikia
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Coefficients of the equations
+    double a1, b1, c1;
+    double a2, b2, c2;
+
+    // Input from user
+    cout << "Enter coefficients for the first equation (a1, b1, c1): ";
+    cin >> a1 >> b1 >> c1;
+
+    cout << "Enter coefficients for the second equation (a2, b2, c2): ";
+    cin >> a2 >> b2 >> c2;
+
+    // Calculate the determinant (D)
+    double D = a1 * b2 - a2 * b1;
+
+    if (D == 0) {
+        cout << "The system has no unique solution (D = 0)." << endl;
+    } else {
+        // Calculate Dx and Dy
+        double Dx = c1 * b2 - c2 * b1;
+        double Dy = a1 * c2 - a2 * c1;
+
+        // Apply Cramer's Rule
+        double x = Dx / D;
+        double y = Dy / D;
+
+        cout << "The solution is:" << endl;
+        cout << "x = " << x << endl;
+        cout << "y = " << y << endl;
+    }
+
+    return 0;
+}
