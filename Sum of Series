@@ -1,0 +1,29 @@
+// This code is developed by Alitya Saikia
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    double sum = 0.0;
+
+    // Input from the user
+    cout << "Enter a positive integer n: ";
+    cin >> n;
+
+    // Input validation
+    if (n <= 0) {
+        cout << "Invalid input. Please enter a positive integer greater than 0." << endl;
+        return 1;
+    }
+
+    // Compute the sum of the series
+    for (int i = 1; i <= n; ++i) {
+        sum += 1.0 / i;
+    }
+
+    // Output the result
+    cout.precision(10); // optional: for more decimal places
+    cout << "The sum of the series S = 1 + 1/2 + ... + 1/" << n << " is: " << sum << endl;
+
+    return 0;
+}
