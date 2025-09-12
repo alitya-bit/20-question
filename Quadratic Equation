@@ -1,0 +1,46 @@
+// This code is developed by Alitya Saikia
+#include <iostream>
+#include <cmath> // For sqrt() and abs()
+#include <complex> // For complex numbers
+using namespace std;
+
+int main() {
+    double a, b, c;
+
+    // Input coefficients
+    cout << "Enter coefficients a, b, and c for the quadratic equation ax^2 + bx + c = 0:\n";
+    cin >> a >> b >> c;
+
+    // Handle case when 'a' is zero (not a quadratic equation)
+    if (a == 0) {
+        cout << "This is not a quadratic equation (a = 0)." << endl;
+        return 1;
+    }
+
+    double discriminant = b * b - 4 * a * c;
+
+    cout << "\nDiscriminant (D) = " << discriminant << endl;
+
+    if (discriminant > 0) {
+        // Two distinct real roots
+        double root1 = (-b + sqrt(discriminant)) / (2 * a);
+        double root2 = (-b - sqrt(discriminant)) / (2 * a);
+        cout << "The equation has two real and distinct roots:\n";
+        cout << "Root 1 = " << root1 << endl;
+        cout << "Root 2 = " << root2 << endl;
+    } else if (discriminant == 0) {
+        // One real root
+        double root = -b / (2 * a);
+        cout << "The equation has one real and repeated root:\n";
+        cout << "Root = " << root << endl;
+    } else {
+        // Complex roots
+        double realPart = -b / (2 * a);
+        double imagPart = sqrt(abs(discriminant)) / (2 * a);
+        cout << "The equation has two complex roots:\n";
+        cout << "Root 1 = " << realPart << " + " << imagPart << "i" << endl;
+        cout << "Root 2 = " << realPart << " - " << imagPart << "i" << endl;
+    }
+
+    return 0;
+}
