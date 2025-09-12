@@ -1,0 +1,32 @@
+// This code is developed by Alityas
+#include <iostream>
+#include <cmath> // for pow()
+using namespace std;
+
+int main() {
+    // Declare variables
+    double principal, rate, time;
+
+    // Input from user
+    cout << "Enter Principal amount: ";
+    cin >> principal;
+
+    cout << "Enter Rate of interest (per annum in %): ";
+    cin >> rate;
+
+    cout << "Enter Time (in years): ";
+    cin >> time;
+
+    // Calculate Simple Interest
+    double simpleInterest = (principal * rate * time) / 100;
+
+    // Calculate Compound Interest
+    double amount = principal * pow((1 + rate / 100), time);
+    double compoundInterest = amount - principal;
+
+    // Output results
+    cout << "\nSimple Interest = " << simpleInterest << endl;
+    cout << "Compound Interest = " << compoundInterest << endl;
+
+    return 0;
+}
