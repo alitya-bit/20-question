@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+//This code is developed by Alityass
 
 int main() {
     int num;
@@ -30,4 +31,5 @@ int main() {
 
     return 0;
 }
+
 
